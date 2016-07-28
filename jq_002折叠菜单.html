@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ol,ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none；
+			color:#000;
+		}
+		#div{
+			width: 100px;
+			border:1px solid #000;
+		}
+		.level{
+			background: #000;
+			color: #fff;
+		}
+		.tab{
+			display: none;
+		}
+		.tab li{
+			height: 30px;
+			width: 100px;
+			line-height: 30px;
+			text-align: center;
+		}
+		.tab li:hover{
+			background: #ccc;
+			color: #fff;
+		}
+	</style>
+</head>
+<body onselectstart='return false;'>
+	<div id="div">
+		<h3 class="level">菜单1</h3>
+		<ul class="tab">
+			<li>子菜单1</li>
+			<li>子菜单2</li>
+			<li>子菜单3</li>
+		</ul>
+		<h3 class="level">菜单2</h3>
+		<ul class="tab">
+			<li>子菜单1</li>
+			<li>子菜单2</li>
+			<li>子菜单3</li>
+		</ul>
+	</div>
+	<script src='jquery-1.12.4.js'></script>
+	<script type="text/javascript">
+		/*var aH3 = document.getElementsByTagName('h3');
+		var oUl = document.getElementsByTagName('ul')
+		for(var i=0;i<aH3.length;i++){
+			aH3[i].onclick = function(){
+				var oUl = next(this);
+				oUl.style.display = (oUl.style.display == 'block' ? 'none' :'block');
+			}
+		}
+		function next(elem){
+			do{
+				elem = elem.nextSibling;
+			}while(elem && elem.nodeType != 1);
+			return elem;
+		}*/
+
+		$(function(){
+			$('.level').on('click',function(){
+				/*$(this).nextSibling.css('display',function(){
+
+				})*/
+				$(this).next().toggleClass('tab');
+			})
+
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ol,ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none；
+			color:#000;
+		}
+		.first-level{
+			float: left;
+			width: 120px;
+			height: 30px;
+			background: #ccc;
+			margin-right:2px; 
+			border: 1px solid #000;
+			line-height: 30px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.second-level{
+			border-bottom: 1px solid #000;
+			border-right: 1px solid #000;
+			border-left:1px solid #000;
+			height: 100px;
+			line-height: 24px;
+			text-align: center;
+
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="div">
+		<ul class="level">
+			<li class="first-level">一级菜单1
+				<ul class="second-level">
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+					<li>二级菜单4</li>
+				</ul>
+			</li>
+			<li class="first-level">一级菜单2
+				<ul class="second-level">
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+					<li>二级菜单4</li>
+				</ul>
+			</li>
+			<li class="first-level">一级菜单3
+				<ul class="second-level">
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+					<li>二级菜单4</li>
+				</ul>
+			</li>
+			<li class="first-level">一级菜单4
+				<ul class="second-level">
+					<li>二级菜单1</li>
+					<li>二级菜单2</li>
+					<li>二级菜单3</li>
+					<li>二级菜单4</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script  src='jquery-1.12.4.js'></script>
+	<script>
+		$('.first-level').on('mouseover',function(){
+			$(this).children().stop().slideDown();
+		});
+		$('.first-level').on('mouseout',function(){
+			$(this).children().stop().slideUp();
+		});
+	</script>
+</body>
+</html>

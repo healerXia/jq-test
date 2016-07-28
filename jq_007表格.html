@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			 border: 1px solid #000; 
+		}
+		table td,th{
+			border: 1px solid #000;
+			width: 120px;
+			height: 30px;
+		}
+		table th{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="div">
+		<table>
+			<caption>可编辑表格</caption>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+			</tr>
+			<tr>
+	         	<td>1</td>
+	         	<td class="editable">张一</td>
+	         </tr>
+	         <tr>
+	         	<td>2</td>
+	         	<td class="editable">王二</td>
+	         </tr>
+	         <tr>
+	         	<td>3</td>
+	         	<td class="editable">赵三</td>
+	         </tr>
+	         <tr>
+	         	<td>4</td>
+	         	<td class="editable">李四</td>
+	         </tr> 
+         </table>                                        
+	</div>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('.editable').on('click',function(){
+
+				if($(this).children('input').length > 0){
+					return false;
+				}
+
+				var $input = $('<input type="text" value='+this.innerHTML+'>').css({
+					width:$(this).width(),
+					border:0
+				});
+				$(this).empty().append($input);
+				$input.trigger('select');
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div1">
+		<form method="post" action="">
+		   你爱好的运动是？
+		   <br/>
+		    <input type="checkbox" name="items" value="足球"/>足球
+			<input type="checkbox" name="items" value="篮球"/>篮球
+			<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+			<input type="checkbox" name="items" value="乒乓球"/>乒乓球
+		   <br/>
+		    <input type="button" id="CheckedAll" value="全　选"/>
+		    <input type="button" id="CheckedNo" value="全不选"/>
+		    <input type="button" id="CheckedRev" value="反　选"/> 
+
+			<input type="button" id="send" value="提　交"/> 
+		</form>
+	</div>
+	<script src='jquery-1.12.4.js'></script>
+	<script>
+		$(function(){
+			$('#CheckedAll').on('click',function(){
+				$('[name]').prop('checked',true);
+			});
+			$('#CheckedNo').on('click',function(){
+				$('[name]').prop('checked',false);
+			});
+			$('#CheckedRev').on('click',function(){
+				$('[name]').each(function(index,elem){
+					this.checked=!this.checked;
+					
+				/*	if($(this).prop('checked')){
+					$('[name]').prop('checked',false);
+					}else if(!$(this).prop('checked')){
+					$('[name]').prop('checked',true);
+				    };*/
+			    });
+			});
+		});
+	</script>
+</body>
+</html>
